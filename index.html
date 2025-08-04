@@ -111,23 +111,20 @@
                 const faqItems = document.querySelectorAll('.faq-content');
                 const faqIcons = document.querySelectorAll('.faq-icon');
                 faqItems[index].classList.toggle('hidden');
-                faqIcons[index].textContent = faqItems[index].classList.contains('hidden') ? '+' : '−';
-            }
+                faqIcons[index].textContent = faqItems[index].classList.contains('hidden') ? '+' : '−';}
             function addReview(event) {
                 event.preventDefault();
                 const reviewName = document.getElementById('reviewname').value;
                 const reviewText = document.getElementById('reviewtext').value;
                 if (!reviewName.trim() || !reviewText.trim()) {
                     alert('Please fill in both name and review fields!');
-                    return;
-                }
+                    return;}
                 const div = document.createElement('div');
                 div.className = "bg-white p-4 rounded shadow mb-4";
                 div.innerHTML = `<strong>${reviewName}</strong><p>${reviewText}</p>`;
                 document.getElementById('reviewlist').appendChild(div);
                 event.target.reset();
-                alert('Thank you for your review!');
-            }
+                alert('Thank you for your review!');}
         </script>
     </body>
 </html>
