@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name=viewprot content="width=device-width,initial-scale=1.0">
+        <title>TMNT Merch</title>
+        <link rel="icon" type ="image/x-icon" href="assets/Tmnt_Logo_Ninja_Turtles-removebg-preview.png">
+    </head>
+
+    <body>
+        <nav class="bg-black text-white p-2">
+            <div class="container mx-auto flex items-center justify-center">
+                <div class="flex-shrink-0 flex gap-20 items-center text-xl">
+                    <a href="#home" class="hover:text-yellow-300 font-mono font-extrabold">Home</a>
+                    <a href="#product" class="hover:text-yellow-300 font-mono font-extrabold">Products</a>
+                    <img src ="assets/teenage-mutant-ninja-turtles-icon_e1ad1c69-90ab-4185-a05c-2f07574653a4.png" alt="Ninja Turtles" class="h-20 drop-shadow-[0_0_20px_#22c55e]">
+                    <a href="#reviews" class="hover:text-yellow-300 font-mono font-extrabold">Reviews</a>
+                    <a href="#faq" class="hover:text-yellow-300 font-mono font-extrabold">FAQ</a>
+                </div>
+            </div>
+        </nav>
+        <div class="relative h-screen bg-cover bg-center bg-fixed" style="background-image: url('assets/upscalemedia-transformed.jpeg');" id="home"> <!--add the background image with tailwind css didn't work right so I have to use pure css for this step-->
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div class="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-4"id="#home">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Cowabunga! Get Your TMNT Gear</h1>
+                <p class="text-lg md:text-xl mb-6">Radical merch straight from the sewers of NYC!</p>
+                <a href="#product" class="bg-yellow-400 text-black px-6 py-2 rounded-full font-bold hover:bg-yellow-300 transition">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="bg-gray-100 py-16 py-7 bg-opacity-50" id="product">
+            <h1 class="text-3xl font-bold text-center mb-12">Our Merches</h1>
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden p-6 text-center">
+                    <img src="assets/a-bunch-of-officially-licensed-tmnt-2012-merch-released-on-v0-apzbtfj1dbaa1.webp" alt="TMNT T-shirt" class="mx-auto h-45 mb-4">
+                    <h3 class="text-xl font-bold mb-2">TMNT T-Shirt</h3>
+                    <p class="mb-4 text-gray-700"><b>Description:</b> A summer T-shirt made of natural Egyptian cotton, embroidered in Italy, the print was drawn by a professional Hungarian artist, signed by Leonardo himself, and blessed by Master Splinter, to reach your hands with a special shipment from the Turtle HQ.</p>
+                    <button onclick="document.getElementById('audio').play()" class="bg-green-700 text-white px-4 py-2 rounded-full font-extrabold hover:bg-green-600 transition">Message from Leonardo</button>
+                    <audio id="audio" src="assets/Leonardo.mp3"></audio>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden p-6 text-center">
+                    <img src="assets/teenage-mutant-ninja-turtles-mutant-mayhem-pizza-hoodie-725122-removebg-preview.png" alt="TMNT Hoodie" class="mx-auto h-45 mb-4">
+                    <h3 class="text-xl font-bold mb-2">TMNT Hoodie</h3>
+                    <p class="mb-4 text-gray-700"><b>Description:</b> A cozy hoodie made of high-quality materials, featuring a unique design inspired made by Michelangelo himself. Perfect for keeping warm while you plan your next adventure!</p>
+                    <button onclick="document.getElementById('audio2').play()" class="bg-green-700 text-white px-4 py-2 rounded-full font-extrabold hover:bg-green-600 transition">Message from Michelangelo</button>
+                    <audio id="audio2" src="assets/Michelangelo.mp3"></audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white py-16 px-4" id="reviews">
+            <h2 class="text-3xl font-bold text-center mb-10">What the fans say</h2>
+            <div class="max-w-6xl mx-auto space-y-6" id="reviewlist"></div>
+            <div class="max-w-6xl mx-auto bg-gray-100 rounded-lg p-6 mt-10">
+                <form onsubmit="addReview(event)" class="">
+                    <input type="text" id="reviewname" placeholder="Your Name" required class="w-full p-2 rounded border"/>
+                    <textarea id ="reviewtext" placeholder="Your Review" required class="w-full p-2 rounded border mt-4"></textarea>
+                    <button class="bg-green-700 text-white w-full rounded font-extrabold px-4 py-3 hover:bg-green-600 transition">Send your review</button>
+                </form>
+            </div>
+        </div>
+
+    <div id="faq" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-gray-50 rounded-lg shadow">
+                    <button class="faq-btn w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(0)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">Do you ship worldwide?</h3>
+                            <span class="faq-icon transition-transform duration-200">+</span>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">Yes! We ship turtle power worldwide. Shipping times vary by location, but we guarantee your items will arrive faster than you can say "Cowabunga!"</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg shadow">
+                    <button class="faq-btn w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(1)">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-semibold">Are the products officially licensed?</h3>
+                            <span class="faq-icon transition-transform duration-200">+</span>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">Absolutely! All our merchandise is officially licensed TMNT gear, approved by Master Splinter himself (and the licensing team).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="bg-teal-800 text-white px-4 py-16" id="contact">
+            <h2 class="text-3xl font-bold text-center mb-10">Send to the Ninja Turtles</h2>
+            <div class="max-w-6xl mx-auto">
+                <form>
+                    <input type="text" placeholder="Your Name" required class="w-full p-2 mt-2 rounded-full bg-gray-800 border border-gray-600"/>
+                    <input type="email" placeholder="Your Email" required class="w-full p-2 mt-2 rounded-full bg-gray-800 border border-gray-600"/>
+                    <textarea placeholder="Your question" required class="w-full p-2 rounded-full mt-2 bg-gray-800 border border-gray-600"></textarea>
+                    <button class="bg-green-600 hover:bg-green-500 px-4 py-2 rounded-full text-white text-center">Send The Message</button>
+                </form>
+            </div>
+        </div>
+        <footer class="container text-white py-6 text-center bg-gray-700"><p>TMNT Merch Store. Saved by turtles power</p></footer>
+
+        <script>
+            function toggleFAQ(index) {
+                const faqItems = document.querySelectorAll('.faq-content');
+                const faqIcons = document.querySelectorAll('.faq-icon');
+                faqItems[index].classList.toggle('hidden');
+                faqIcons[index].textContent = faqItems[index].classList.contains('hidden') ? '+' : '−';
+            }
+            function addReview(event) {
+                event.preventDefault();
+                const reviewName = document.getElementById('reviewname').value;
+                const reviewText = document.getElementById('reviewtext').value;
+                if (!reviewName.trim() || !reviewText.trim()) {
+                    alert('Please fill in both name and review fields!');
+                    return;
+                }
+                const div = document.createElement('div');
+                div.className = "bg-white p-4 rounded shadow mb-4";
+                div.innerHTML = `<strong>${reviewName}</strong><p>${reviewText}</p>`;
+                document.getElementById('reviewlist').appendChild(div);
+                event.target.reset();
+                alert('Thank you for your review!');
+            }
+        </script>
+    </body>
+</html>
